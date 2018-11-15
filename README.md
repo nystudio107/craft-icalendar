@@ -40,6 +40,9 @@ There's nothing to configure.
 To use iCalendar, just wrap your Twig code that outputs your iCalendar RFC 2445 text like so:
 
 ```twig
+{% spaceless %}
+{% header "Content-Type: text/calendar; charset=utf-8" %}
+{% header "Content-Disposition: attachment; filename=cal.ics" %}
 {% filter rfc2445 %}
 BEGIN:VCALENDAR
 PRODID:Camden Open House
@@ -61,6 +64,7 @@ BEGIN:VEVENT
     END:VEVENT
 END:VCALENDAR
 {% endfilter %}
+{% endspaceless %}
 ```
 
 This will output:
