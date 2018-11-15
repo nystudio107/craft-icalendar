@@ -45,22 +45,22 @@ To use iCalendar, just wrap your Twig code that outputs your iCalendar RFC 2445 
 {% header "Content-Disposition: attachment; filename=cal.ics" %}
 {% filter rfc2445 %}
 BEGIN:VCALENDAR
-PRODID:Camden Open House
+PRODID:{{ entry.title }}
 CALSCALE:GREGORIAN
 VERSION:2.0
 METHOD:PUBLISH
 TRANSP:TRANSPARENT
-X-WR-CALNAME:Camden Open House
+X-WR-CALNAME:{{ entry.title }}
 X-WR-TIMEZONE:America/New_York
 BEGIN:VEVENT
     UID:1119
-    DTSTAMP:20181201T120101Z
-    DTSTART:20181201T120101Z
-    DTEND:20181108T120101Z
+    DTSTAMP:{{ entry.startDate.getTimestamp() | date("Ymd", "UTC") }}T{{ entry.startDate.getTimestamp() | date("Gi", "UTC") }}00Z
+    DTSTART:{{ entry.startDate.getTimestamp() | date("Ymd", "UTC") }}T{{ entry.startDate.getTimestamp() | date("Gi", "UTC") }}00Z
+    DTEND:{{ entry.endDate.getTimestamp() | date("Ymd", "UTC") }}T{{ entry.endDate.getTimestamp() | date("Gi", "UTC") }}00Z
     LOCATION:On Campus Camden, SC
     SUMMARY:OPEN HOUSE (ON CAMPUS) FOR PROSPECTIVE FAMILIES/CADETS
     DESCRIPTION:This is a <strong>very long description</strong>, too long to fit inside of 75 octets, certainly! An on campus open house will be held on Saturday, December 1 2018 at 7pm.
-    URL:test
+    URL:{{ entry.url }}
     END:VEVENT
 END:VCALENDAR
 {% endfilter %}
