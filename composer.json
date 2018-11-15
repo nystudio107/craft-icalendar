@@ -1,0 +1,43 @@
+{
+    "name": "nystudio107/craft-icalendar",
+    "description": "Ensures that text conforms to the RFC 2445 iCalendar specification",
+    "type": "craft-plugin",
+    "version": "1.0.0",
+    "keywords": [
+        "craft",
+        "cms",
+        "craftcms",
+        "craft-plugin",
+        "icalendar"
+    ],
+    "support": {
+        "docs": "https://github.com/nystudio107/craft-icalendar/blob/master/README.md",
+        "issues": "https://github.com/nystudio107/craft-icalendar/issues"
+    },
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "nystudio107",
+            "homepage": "https://nystudio107.com"
+        }
+    ],
+    "require": {
+        "craftcms/cms": "^3.0.0"
+    },
+    "autoload": {
+        "psr-4": {
+          "nystudio107\\icalendar\\": "src/"
+        }
+    },
+    "extra": {
+        "name": "iCalendar",
+        "handle": "icalendar",
+        "hasCpSettings": false,
+        "hasCpSection": false,
+        "changelogUrl": "https://raw.githubusercontent.com/nystudio107/craft-icalendar/master/CHANGELOG.md",
+        "components": {
+            "convert": "nystudio107\\icalendar\\services\\Convert"
+        },
+        "class": "nystudio107\\icalendar\\ICalendar"
+    }
+}
