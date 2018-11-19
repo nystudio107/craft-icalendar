@@ -20,7 +20,7 @@ To install the plugin, follow these instructions.
 
 3. In the Control Panel, go to Settings → Plugins and click the “Install” button for iCalendar.
 
-Or you can just install the plugin via the Craft CMS Plugin Store in the AdminCP
+Or you can just install the plugin via the Craft CMS Plugin Store in the Control Panel
 
 ## iCalendar Overview
 
