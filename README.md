@@ -1,6 +1,10 @@
+[![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/nystudio107/craft-icalendar/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/nystudio107/craft-icalendar/?branch=master) [![Code Coverage](https://scrutinizer-ci.com/g/nystudio107/craft-icalendar/badges/coverage.png?b=master)](https://scrutinizer-ci.com/g/nystudio107/craft-icalendar/?branch=master) [![Build Status](https://scrutinizer-ci.com/g/nystudio107/craft-icalendar/badges/build.png?b=master)](https://scrutinizer-ci.com/g/nystudio107/craft-icalendar/build-status/master) [![Code Intelligence Status](https://scrutinizer-ci.com/g/nystudio107/craft-icalendar/badges/code-intelligence.svg?b=master)](https://scrutinizer-ci.com/code-intelligence)
+
 # iCalendar plugin for Craft CMS 3.x
 
 Ensures that text conforms to the RFC 2445 iCalendar specification
+
+![Screenshot](resources/img/plugin-logo.png)
 
 ## Requirements
 
