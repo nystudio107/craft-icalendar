@@ -2,7 +2,7 @@
     "name": "nystudio107/craft-icalendar",
     "description": "Ensures that text conforms to the RFC 2445 iCalendar specification",
     "type": "craft-plugin",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "keywords": [
         "craft",
         "cms",
