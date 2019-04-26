@@ -11,7 +11,7 @@
         "icalendar"
     ],
     "support": {
-        "docs": "https://github.com/nystudio107/craft-icalendar/blob/master/README.md",
+        "docs": "https://github.com/nystudio107/craft-icalendar/blob/v1/README.md",
         "issues": "https://github.com/nystudio107/craft-icalendar/issues"
     },
     "license": "MIT",
@@ -35,7 +35,7 @@
         "handle": "icalendar",
         "hasCpSettings": false,
         "hasCpSection": false,
-        "changelogUrl": "https://raw.githubusercontent.com/nystudio107/craft-icalendar/master/CHANGELOG.md",
+        "changelogUrl": "https://raw.githubusercontent.com/nystudio107/craft-icalendar/v1/CHANGELOG.md",
         "components": {
             "convert": "nystudio107\\icalendar\\services\\Convert",
             "parse": "nystudio107\\icalendar\\services\\Parse"
