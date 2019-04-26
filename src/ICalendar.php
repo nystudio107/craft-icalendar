@@ -2,7 +2,7 @@
 /**
  * iCalendar plugin for Craft CMS 3.x
  *
- * Ensures that text conforms to the RFC 2445 iCalendar specification
+ * Tools for parsing & formatting the RFC 2445 iCalendar (.ics) specification
  *
  * @link      https://nystudio107.com
  * @copyright Copyright (c) 2018 nystudio107
@@ -11,10 +11,15 @@
 namespace nystudio107\icalendar;
 
 use nystudio107\icalendar\services\Convert as ConvertService;
+use nystudio107\icalendar\services\Parse as ParseService;
 use nystudio107\icalendar\twigextensions\ICalendarTwigExtension;
+use nystudio107\icalendar\variables\ICalendarVariable;
 
 use Craft;
 use craft\base\Plugin;
+use craft\web\twig\variables\CraftVariable;
+
+use yii\base\Event;
 
 /**
  * Class ICalendar
@@ -24,6 +29,7 @@ use craft\base\Plugin;
  * @since     1.0.0
  *
  * @property  ConvertService $convert
+ * @property  ParseService   $parse
  */
 class ICalendar extends Plugin
 {
@@ -53,8 +59,18 @@ class ICalendar extends Plugin
     {
         parent::init();
         self::$plugin = $this;
-
+        // Register Twig extension
         Craft::$app->view->registerTwigExtension(new ICalendarTwigExtension());
+        // Register variable
+        Event::on(
+            CraftVariable::class,
+            CraftVariable::EVENT_INIT,
+            function (Event $event) {
+                /** @var CraftVariable $variable */
+                $variable = $event->sender;
+                $variable->set('icalendar', ICalendarVariable::class);
+            }
+        );
 
         Craft::info(
             Craft::t(

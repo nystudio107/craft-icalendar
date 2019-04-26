@@ -1,8 +1,8 @@
 {
     "name": "nystudio107/craft-icalendar",
-    "description": "Ensures that text conforms to the RFC 2445 iCalendar specification",
+    "description": "Tools for parsing & formatting the RFC 2445 iCalendar (.ics) specification",
     "type": "craft-plugin",
-    "version": "1.0.1",
+    "version": "1.1.0",
     "keywords": [
         "craft",
         "cms",
@@ -11,7 +11,7 @@
         "icalendar"
     ],
     "support": {
-        "docs": "https://github.com/nystudio107/craft-icalendar/blob/master/README.md",
+        "docs": "https://github.com/nystudio107/craft-icalendar/blob/v1/README.md",
         "issues": "https://github.com/nystudio107/craft-icalendar/issues"
     },
     "license": "MIT",
@@ -22,7 +22,8 @@
         }
     ],
     "require": {
-        "craftcms/cms": "^3.0.0"
+        "craftcms/cms": "^3.0.0",
+        "johngrogg/ics-parser": "^2.1.0"
     },
     "autoload": {
         "psr-4": {
@@ -34,9 +35,10 @@
         "handle": "icalendar",
         "hasCpSettings": false,
         "hasCpSection": false,
-        "changelogUrl": "https://raw.githubusercontent.com/nystudio107/craft-icalendar/master/CHANGELOG.md",
+        "changelogUrl": "https://raw.githubusercontent.com/nystudio107/craft-icalendar/v1/CHANGELOG.md",
         "components": {
-            "convert": "nystudio107\\icalendar\\services\\Convert"
+            "convert": "nystudio107\\icalendar\\services\\Convert",
+            "parse": "nystudio107\\icalendar\\services\\Parse"
         },
         "class": "nystudio107\\icalendar\\ICalendar"
     }
