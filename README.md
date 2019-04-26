@@ -51,10 +51,10 @@ iCalendar uses the [ics-parse](https://github.com/u01jmg3/ics-parser) library un
 
 Examples:
 ```twig
-{# Pass in a path to a local file %}
+{# Pass in a path to a local file #}
 {% set cal = parseIcs("/home/vagrant/sites/craft3/calendar.ics") %}
 
-{# Pass in a URL to a remote file %}
+{# Pass in a URL to a remote file #}
 {% set cal = parseIcs("https://example.com/calendar.ics") %}
 
 {# Pass in an array of paths/URLs #}
