@@ -2,7 +2,7 @@
 /**
  * iCalendar plugin for Craft CMS 3.x
  *
- * Ensures that text conforms to the RFC 2445 iCalendar specification
+ * Tools for parsing & formatting the RFC 2445 iCalendar (.ics) specification
  *
  * @link      https://nystudio107.com
  * @copyright Copyright (c) 2018 nystudio107
@@ -12,12 +12,16 @@ namespace nystudio107\icalendar\twigextensions;
 
 use nystudio107\icalendar\ICalendar;
 
+use Twig\Extension\AbstractExtension as TwigExtension;
+use Twig\TwigFilter;
+use Twig\TwigFunction;
+
 /**
  * @author    nystudio107
  * @package   ICalendar
  * @since     1.0.0
  */
-class ICalendarTwigExtension extends \Twig_Extension
+class ICalendarTwigExtension extends TwigExtension
 {
     // Public Methods
     // =========================================================================
@@ -36,7 +40,8 @@ class ICalendarTwigExtension extends \Twig_Extension
     public function getFilters()
     {
         return [
-            new \Twig_SimpleFilter('rfc2445', [ICalendar::$plugin->convert, 'rfc2445']),
+            new TwigFilter('rfc2445', [ICalendar::$plugin->convert, 'rfc2445']),
+            new TwigFilter('parseIcs', [ICalendar::$plugin->parse, 'ics']),
         ];
     }
 
@@ -46,7 +51,8 @@ class ICalendarTwigExtension extends \Twig_Extension
     public function getFunctions()
     {
         return [
-            new \Twig_SimpleFunction('rfc2445', [ICalendar::$plugin->convert, 'rfc2445']),
+            new TwigFunction('rfc2445', [ICalendar::$plugin->convert, 'rfc2445']),
+            new TwigFunction('parseIcs', [ICalendar::$plugin->parse, 'ics']),
         ];
     }
 }
