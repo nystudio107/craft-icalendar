@@ -119,6 +119,8 @@ This will output something like:
       public 'attendee' => null
 ```
 
+Here's the [Event object](https://github.com/u01jmg3/ics-parser/blob/master/src/ICal/Event.php).
+
 ### Formatting RFC 2445 text in Twig
 
 To use iCalendar, just wrap your Twig code that outputs your iCalendar RFC 2445 text like so:
