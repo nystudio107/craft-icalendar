@@ -119,7 +119,7 @@ This will output something like:
       public 'attendee' => null
 ```
 
-Here's the [Event object](https://github.com/u01jmg3/ics-parser/blob/master/src/ICal/Event.php).
+Here's the [Event object](https://github.com/u01jmg3/ics-parser/blob/master/src/ICal/Event.php) so you can see the data structure.
 
 ### Formatting RFC 2445 text in Twig
 
