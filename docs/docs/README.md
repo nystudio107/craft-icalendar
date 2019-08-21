@@ -22,7 +22,7 @@ To install the plugin, follow these instructions.
 
         composer require nystudio107/craft-icalendar
 
-3. Install the plugin via `./craft install/plugin icalendar` via the CLI, or in the Control Panel, go to Settings → Plugins and click the “Install” button for Connect.
+3. Install the plugin via `./craft install/plugin icalendar` via the CLI, or in the Control Panel, go to Settings → Plugins and click the “Install” button for iCalendar.
 
 Or you can just install the plugin via the Craft CMS Plugin Store in the Control Panel
 
