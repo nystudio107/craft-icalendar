@@ -4,7 +4,7 @@
 
 Tools for parsing & formatting the RFC 2445 iCalendar (.ics) specification
 
-![Screenshot](docs/resources/img/plugin-logo.png)
+![Screenshot](./docs/docs/resources/img/plugin-logo.png)
 
 ## Requirements
 
