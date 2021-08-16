@@ -68,7 +68,7 @@ class Convert extends Component
     {
         $value = trim($value);
         $value = strip_tags($value);
-        $value = htmlentities($value);
+        $value = html_entity_decode($value);
         $value = preg_replace('/\n+/', ' ', $value);
         $value = preg_replace('/\s{2,}/', ' ', $value);
         $preamble_len = \strlen($preamble);
