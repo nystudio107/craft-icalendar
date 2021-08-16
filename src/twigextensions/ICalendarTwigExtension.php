@@ -40,8 +40,8 @@ class ICalendarTwigExtension extends TwigExtension
     public function getFilters()
     {
         return [
-            new TwigFilter('rfc2445', [ICalendar::$plugin->convert, 'rfc2445']),
-            new TwigFilter('parseIcs', [ICalendar::$plugin->parse, 'ics']),
+            new TwigFilter('rfc2445', [ICalendar::$variable, 'rfc2445']),
+            new TwigFilter('parseIcs', [ICalendar::$variable, 'ics']),
         ];
     }
 
@@ -51,8 +51,8 @@ class ICalendarTwigExtension extends TwigExtension
     public function getFunctions()
     {
         return [
-            new TwigFunction('rfc2445', [ICalendar::$plugin->convert, 'rfc2445']),
-            new TwigFunction('parseIcs', [ICalendar::$plugin->parse, 'ics']),
+            new TwigFunction('rfc2445', [ICalendar::$variable, 'rfc2445']),
+            new TwigFunction('parseIcs', [ICalendar::$variable, 'ics']),
         ];
     }
 }

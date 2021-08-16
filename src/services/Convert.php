@@ -48,7 +48,8 @@ class Convert extends Component
         foreach ($lines as $line) {
             $result .= $this->icalSplit('', $line) . self::RFC2455_EOL;
         }
-        return Template::raw($result);
+
+        return $result;
     }
 
     // Protected Methods
