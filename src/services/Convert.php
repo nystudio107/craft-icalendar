@@ -68,6 +68,7 @@ class Convert extends Component
     {
         $value = trim($value);
         $value = strip_tags($value);
+        $value = htmlentities($value);
         $value = preg_replace('/\n+/', ' ', $value);
         $value = preg_replace('/\s{2,}/', ' ', $value);
         $preamble_len = \strlen($preamble);
@@ -92,6 +93,6 @@ class Convert extends Component
             $lines[] = $value;
         }
 
-        return implode($lines);
+        return implode("\n\t", $lines);
     }
 }
