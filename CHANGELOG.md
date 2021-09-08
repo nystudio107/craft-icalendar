@@ -1,5 +1,9 @@
 # iCalendar Changelog
 
+## 1.1.2 - UNRELEASED
+### Fixed
+* Fixed an issue where descriptions are cut off at paragraph breaks in iCal ([#26](https://github.com/nystudio107/craft-icalendar/issues/26))
+
 ## 1.1.1 - 2021.09.08
 ### Fixed
 * Decode any HTML entities in the rfc2545 filter ([#1](https://github.com/nystudio107/craft-icalendar/issues/1))
