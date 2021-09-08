@@ -54,7 +54,6 @@ class Convert extends Component
                 $result .= self::RFC2455_NEWLINE;
             }
         }
-        \Craft::dd(($result));
 
         return $result;
     }
