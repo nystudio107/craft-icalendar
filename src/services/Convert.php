@@ -25,6 +25,7 @@ class Convert extends Component
     // =========================================================================
 
     const RFC2455_EOL = "\r\n";
+    const RFC2455_SPLIT_LINE = "\n\t";
     const MAX_OCTETS = 75;
 
     // Public Methods
@@ -49,7 +50,7 @@ class Convert extends Component
             $result .= $this->icalSplit('', $line) . self::RFC2455_EOL;
             end($lines);
             if ($key !== key($lines)) {
-                $result .= "\t";
+                $result .= self::RFC2455_SPLIT_LINE;
             }
 
         }
@@ -99,6 +100,6 @@ class Convert extends Component
             $lines[] = $value;
         }
 
-        return implode(self::RFC2455_EOL."\t", $lines);
+        return implode(self::RFC2455_EOL.self::RFC2455_SPLIT_LINE, $lines);
     }
 }
