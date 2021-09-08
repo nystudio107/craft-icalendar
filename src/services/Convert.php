@@ -45,8 +45,13 @@ class Convert extends Component
         $text = str_replace(["\n", "\r\r\n"], self::RFC2455_EOL, $text);
         // Split the text into separate lines
         $lines = explode(self::RFC2455_EOL, $text);
-        foreach ($lines as $line) {
+        foreach ($lines as $key => $line) {
             $result .= $this->icalSplit('', $line) . self::RFC2455_EOL;
+            end($lines);
+            if ($key !== key($lines)) {
+                $result .= "\t";
+            }
+
         }
 
         return $result;
