@@ -48,7 +48,8 @@ class Convert extends Component
         foreach ($lines as $line) {
             $result .= $this->icalSplit('', $line) . self::RFC2455_EOL;
         }
-        return Template::raw($result);
+
+        return $result;
     }
 
     // Protected Methods
@@ -68,6 +69,7 @@ class Convert extends Component
     {
         $value = trim($value);
         $value = strip_tags($value);
+        $value = html_entity_decode($value);
         $value = preg_replace('/\n+/', ' ', $value);
         $value = preg_replace('/\s{2,}/', ' ', $value);
         $preamble_len = \strlen($preamble);
@@ -92,6 +94,6 @@ class Convert extends Component
             $lines[] = $value;
         }
 
-        return implode($lines);
+        return implode(self::RFC2455_EOL."\t", $lines);
     }
 }

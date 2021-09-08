@@ -41,6 +41,11 @@ class ICalendar extends Plugin
      */
     public static $plugin;
 
+    /**
+     * @var ICalendarVariable
+     */
+    public static $variable;
+
     // Public Properties
     // =========================================================================
 
@@ -59,6 +64,7 @@ class ICalendar extends Plugin
     {
         parent::init();
         self::$plugin = $this;
+        self::$variable = new ICalendarVariable();
         // Register Twig extension
         Craft::$app->view->registerTwigExtension(new ICalendarTwigExtension());
         // Register variable
@@ -68,7 +74,7 @@ class ICalendar extends Plugin
             function (Event $event) {
                 /** @var CraftVariable $variable */
                 $variable = $event->sender;
-                $variable->set('icalendar', ICalendarVariable::class);
+                $variable->set('icalendar', self::$variable);
             }
         );
 

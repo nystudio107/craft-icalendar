@@ -12,7 +12,11 @@ namespace nystudio107\icalendar\variables;
 
 use nystudio107\icalendar\ICalendar;
 
+use craft\helpers\Template;
+
 use ICal\ICal;
+
+use Twig\Markup;
 
 /**
  * @author    nystudio107
@@ -32,9 +36,9 @@ class ICalendarVariable
      *
      * @return string
      */
-    public function rfc2445(string $text): string
+    public function rfc2445(string $text): Markup
     {
-        return ICalendar::$plugin->convert->rfc2445($text);
+        return Template::raw(ICalendar::$plugin->convert->rfc2445($text));
     }
 
     /**
