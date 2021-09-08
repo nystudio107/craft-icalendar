@@ -94,6 +94,6 @@ class Convert extends Component
             $lines[] = $value;
         }
 
-        return implode(self::RFC2455_EOL, $lines);
+        return implode(self::RFC2455_EOL."\t", $lines);
     }
 }
