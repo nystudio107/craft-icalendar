@@ -1,9 +1,9 @@
 # iCalendar Changelog
 
-## 1.1.1 - UNRELEASED
+## 1.1.1 - 2021.09.08
 ### Fixed
 * Decode any HTML entities in the rfc2545 filter ([#1](https://github.com/nystudio107/craft-icalendar/issues/1))
-* Add `\n\t` to long lines that are split ([#1](https://github.com/nystudio107/craft-icalendar/issues/1))
+* Add `\r\n\t` to long lines that are split ([#1](https://github.com/nystudio107/craft-icalendar/issues/1))
 
 ## 1.1.0 - 2018.04.25
 ### Added
