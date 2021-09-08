@@ -1,8 +1,12 @@
+---
+title: iCalendar plugin for Craft CMS 3.x
+description: Documentation for the iCalendar plugin. iCalendar provides tools for parsing & formatting the RFC 2445 iCalendar (.ics) specification
+---
 [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/nystudio107/craft-icalendar/badges/quality-score.png?b=v1)](https://scrutinizer-ci.com/g/nystudio107/craft-icalendar/?branch=v1) [![Code Coverage](https://scrutinizer-ci.com/g/nystudio107/craft-icalendar/badges/coverage.png?b=v1)](https://scrutinizer-ci.com/g/nystudio107/craft-icalendar/?branch=v1) [![Build Status](https://scrutinizer-ci.com/g/nystudio107/craft-icalendar/badges/build.png?b=v1)](https://scrutinizer-ci.com/g/nystudio107/craft-icalendar/build-status/v1) [![Code Intelligence Status](https://scrutinizer-ci.com/g/nystudio107/craft-icalendar/badges/code-intelligence.svg?b=v1)](https://scrutinizer-ci.com/code-intelligence)
 
 # iCalendar plugin for Craft CMS 3.x
 
-Tools for parsing & formatting the RFC 2445 iCalendar (.ics) specification
+Provides tools for parsing & formatting the RFC 2445 iCalendar (.ics) specification
 
 ![Screenshot](./resources/img/plugin-logo.png)
 
@@ -31,11 +35,11 @@ Or you can just install the plugin via the Craft CMS Plugin Store in the Control
 iCalendar can read and parse RFC 2445 [iCalendar specification](https://icalendar.org/) `.ics` local & remote files, and allows you to query them for events.
 
 iCalendar can also ensures that text conforms to the RFC 2445 [iCalendar specification](https://icalendar.org/) for `.ics` files. Specifically, it transforms text:
- 
- * to ensure the line endings are `\r\n` as opposed to Twig's default `\n`
- * wrap long text to ensure that it is no more than 75 octets in length
- * removes unnecessary whitespace
- * strips all HTML tags from the text 
+
+* to ensure the line endings are `\r\n` as opposed to Twig's default `\n`
+* wrap long text to ensure that it is no more than 75 octets in length
+* removes unnecessary whitespace
+* strips all HTML tags from the text
 
 ## Configuring iCalendar
 
