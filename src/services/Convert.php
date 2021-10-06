@@ -26,7 +26,7 @@ class Convert extends Component
 
     const RFC2455_EOL = "\r\n";
     const RFC2455_TAB = "\t";
-    const RFC2455_NEWLINE = "\t";
+    const RFC2455_LITERAL_NEWLINE = '\n';
     const MAX_OCTETS = 75;
 
     // Public Methods
@@ -45,14 +45,12 @@ class Convert extends Component
         $result = '';
         // Normalize the line breaks
         $text = str_replace(["\n", "\r\r\n"], self::RFC2455_EOL, $text);
+        $text = str_replace(["</p>\r", "</P>\r"], self::RFC2455_LITERAL_NEWLINE.self::RFC2455_LITERAL_NEWLINE, $text);
+        $text = str_replace(["<br>\r", "<BR>\r", "<br />\r", "<BR />\r"], self::RFC2455_LITERAL_NEWLINE, $text);
         // Split the text into separate lines
         $lines = explode(self::RFC2455_EOL, $text);
-        foreach ($lines as $key => $line) {
+       foreach ($lines as $key => $line) {
             $result .= $this->icalSplit('', $line) . self::RFC2455_EOL;
-            end($lines);
-            if ($key !== key($lines)) {
-                $result .= self::RFC2455_NEWLINE;
-            }
         }
 
         return $result;
