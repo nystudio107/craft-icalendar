@@ -45,6 +45,7 @@ class Convert extends Component
         $result = '';
         // Normalize the line breaks
         $text = str_replace(["\n", "\r\r\n"], self::RFC2455_EOL, $text);
+        // Handle rich text field output, such as from Redactor, which may have line or paragraph breaks
         $text = str_replace(["</p>\r", "</P>\r"], self::RFC2455_LITERAL_NEWLINE.self::RFC2455_LITERAL_NEWLINE, $text);
         $text = str_replace(["<br>\r", "<BR>\r", "<br />\r", "<BR />\r"], self::RFC2455_LITERAL_NEWLINE, $text);
         // Split the text into separate lines
