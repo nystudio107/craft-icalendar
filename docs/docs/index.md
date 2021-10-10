@@ -32,18 +32,18 @@ Or you can just install the plugin via the Craft CMS Plugin Store in the Control
 
 ## iCalendar Overview
 
-iCalendar can read and parse RFC 2445 [iCalendar specification](https://icalendar.org/) `.ics` local & remote files, and allows you to query them for events.
+ICalendar can read and parse RFC 2445 [iCalendar specification](https://icalendar.org/) `.ics` local & remote files, and allows you to query them for events.
 
-iCalendar can also ensures that text conforms to the RFC 2445 [iCalendar specification](https://icalendar.org/) for `.ics` files. Specifically, it transforms text:
+ICalendar can also ensures that text conforms to the RFC 2445 [iCalendar specification](https://icalendar.org/) for `.ics` files. Specifically, it transforms text:
 
-* to ensure the line endings are `\r\n` as opposed to Twig's default `\n`
-* wrap long text to ensure that it is no more than 75 octets in length
-* removes unnecessary whitespace
-* strips all HTML tags from the text
+* To ensure the line endings are `\r\n` as opposed to Twig’s default `\n`
+* Wrap long text to ensure that it is at most 75 octets in length
+* Removes unnecessary whitespace
+* Strips all HTML tags from the text
 
 ## Configuring iCalendar
 
-There's nothing to configure.
+There’s nothing to configure.
 
 ## Using iCalendar
 
@@ -51,7 +51,7 @@ There's nothing to configure.
 
 You can use iCalendar to parse an `.ics` file or collection of `.ics` files, and query them for events.
 
-iCalendar uses the [ics-parse](https://github.com/u01jmg3/ics-parser) library under the hood, which works with both local files specific via path, and for remote files specified via URL.
+ICalendar uses the [ics-parse](https://github.com/u01jmg3/ics-parser) library under the hood, which works with both local files specific via path, and for remote files specified via URL.
 
 Examples:
 ```twig
@@ -68,7 +68,7 @@ Examples:
 ]) %}
 ```
 
-There is also a second parameter that allows you to pass in a [configuration](https://github.com/u01jmg3/ics-parser/blob/master/src/ICal/ICal.php#L248) array. Here's an example, with :
+There is also a second parameter that allows you to pass in a [configuration](https://github.com/u01jmg3/ics-parser/blob/master/src/ICal/ICal.php#L248) array. Here’s an example, with :
 ```twig
 {% set cal = parseIcs("https://example.com/calendar.ics",[
     "defaultSpan": 2,
@@ -87,7 +87,7 @@ The `parseIcs` function will return to you an [ICal](https://github.com/u01jmg3/
 
 The [ics-parser documentation](https://github.com/u01jmg3/ics-parser#methods) has a summary of the methods available, and the [code example](https://github.com/u01jmg3/ics-parser/blob/master/examples/index.php) shows a bit of it in use.
 
-But here's a real-world example that parses a remote `.ics` file, and then loops through the events:
+But here’s a real-world example that parses a remote `.ics` file, and then loops through the events:
 
 ```twig
 {% set cal = parseIcs(
@@ -123,7 +123,7 @@ This will output something like:
       public 'attendee' => null
 ```
 
-Here's the [Event object](https://github.com/u01jmg3/ics-parser/blob/master/src/ICal/Event.php) so you can see the data structure.
+Here’s the [Event object](https://github.com/u01jmg3/ics-parser/blob/master/src/ICal/Event.php) so you can see the data structure.
 
 ### Formatting RFC 2445 text in Twig
 
@@ -144,9 +144,9 @@ X-WR-CALNAME:{{ entry.title }}
 X-WR-TIMEZONE:America/New_York
 BEGIN:VEVENT
     UID:1119
-    DTSTAMP:{{ entry.startDate.getTimestamp() | date("Ymd", "UTC") }}T{{ entry.startDate.getTimestamp() | date("Gi", "UTC") }}00Z
-    DTSTART:{{ entry.startDate.getTimestamp() | date("Ymd", "UTC") }}T{{ entry.startDate.getTimestamp() | date("Gi", "UTC") }}00Z
-    DTEND:{{ entry.endDate.getTimestamp() | date("Ymd", "UTC") }}T{{ entry.endDate.getTimestamp() | date("Gi", "UTC") }}00Z
+    DTSTAMP:{{ entry.startDate.getTimestamp() | date("Ymd", "UTC") }}T{{ entry.startDate.getTimestamp() | date("His", "UTC") }}Z
+    DTSTART:{{ entry.startDate.getTimestamp() | date("Ymd", "UTC") }}T{{ entry.startDate.getTimestamp() | date("His", "UTC") }}Z
+    DTEND:{{ entry.endDate.getTimestamp() | date("Ymd", "UTC") }}T{{ entry.endDate.getTimestamp() | date("His", "UTC") }}Z
     LOCATION:On Campus Camden, SC
     SUMMARY:OPEN HOUSE (ON CAMPUS) FOR PROSPECTIVE FAMILIES/CADETS
     DESCRIPTION:This is a <strong>very long description</strong>, too long to fit inside of 75 octets, certainly! An on campus open house will be held on Saturday, December 1 2018 at 7pm.
@@ -182,7 +182,7 @@ END:VEVENT
 END:VCALENDAR
 ```
 
-Note that HTML code and whitespace have been stripped, and long lines have been wrapped. What you can't see is that the line endings are `\r\n` as per spec, as opposed to Twig's `\n` line ending.
+Note that HTML code and whitespace have been stripped, and long lines have been wrapped. What you can’t see is that the line endings are `\r\n` as per spec, as opposed to Twig’s `\n` line ending.
 
 You can put whatever Twig code you want inside of the filter to output your entries.
 
