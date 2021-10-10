@@ -1,6 +1,6 @@
 # iCalendar Changelog
 
-## 1.1.2 - UNRELEASED
+## 1.1.2 - 2021.10.10
 ### Fixed
 * Fixed an issue where paragraphs coming from a rich text field would be broken into multiple lines, and then not read by iCal ([#26](https://github.com/nystudio107/craft-icalendar/issues/26))
 * Fixed incorrect date format in the example Twig code in the documentation
