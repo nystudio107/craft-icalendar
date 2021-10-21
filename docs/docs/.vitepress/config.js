@@ -14,7 +14,7 @@ module.exports = {
         docsDir: 'docs/docs',
         docsBranch: 'v1',
         algolia: {
-            apiKey: '',
+            apiKey: '7a365dc6dfe977be2c9588eb3ed5da26',
             indexName: 'icalendar'
         },
         editLinks: true,
