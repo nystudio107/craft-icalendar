@@ -10,9 +10,8 @@
 
 namespace nystudio107\icalendar\services;
 
-use craft\helpers\Template;
-
 use craft\base\Component;
+use function strlen;
 
 /**
  * @author    nystudio107
@@ -24,10 +23,10 @@ class Convert extends Component
     // Constants
     // =========================================================================
 
-    const RFC2455_EOL = "\r\n";
-    const RFC2455_TAB = "\t";
-    const RFC2455_LITERAL_NEWLINE = '\n';
-    const MAX_OCTETS = 75;
+    protected const RFC2455_EOL = "\r\n";
+    protected const RFC2455_TAB = "\t";
+    protected const RFC2455_LITERAL_NEWLINE = '\n';
+    protected const MAX_OCTETS = 75;
 
     // Public Methods
     // =========================================================================
@@ -46,11 +45,11 @@ class Convert extends Component
         // Normalize the line breaks
         $text = str_replace(["\n", "\r\r\n"], self::RFC2455_EOL, $text);
         // Handle rich text field output, such as from Redactor, which may have line or paragraph breaks
-        $text = str_replace(["</p>\r", "</P>\r"], self::RFC2455_LITERAL_NEWLINE.self::RFC2455_LITERAL_NEWLINE, $text);
+        $text = str_replace(["</p>\r", "</P>\r"], self::RFC2455_LITERAL_NEWLINE . self::RFC2455_LITERAL_NEWLINE, $text);
         $text = str_replace(["<br>\r", "<BR>\r", "<br />\r", "<BR />\r"], self::RFC2455_LITERAL_NEWLINE, $text);
         // Split the text into separate lines
         $lines = explode(self::RFC2455_EOL, $text);
-       foreach ($lines as $key => $line) {
+        foreach ($lines as $key => $line) {
             $result .= $this->icalSplit('', $line) . self::RFC2455_EOL;
         }
 
@@ -65,8 +64,8 @@ class Convert extends Component
      * is longer than 75 octets
      * Adapted from: https://gist.github.com/hugowetterberg/81747
      *
-     * @param $preamble
-     * @param $value
+     * @param string $preamble
+     * @param string $value
      *
      * @return string
      */
@@ -77,14 +76,14 @@ class Convert extends Component
         $value = html_entity_decode($value);
         $value = preg_replace('/\n+/', ' ', $value);
         $value = preg_replace('/\s{2,}/', ' ', $value);
-        $preamble_len = \strlen($preamble);
+        $preamble_len = strlen($preamble);
         $lines = [];
-        while (\strlen($value) > (self::MAX_OCTETS - $preamble_len)) {
+        while (strlen($value) > (self::MAX_OCTETS - $preamble_len)) {
             $space = (self::MAX_OCTETS - $preamble_len);
             $mbcc = $space;
             while ($mbcc) {
                 $line = mb_substr($value, 0, $mbcc);
-                $oct = \strlen($line);
+                $oct = strlen($line);
                 if ($oct > $space) {
                     $mbcc -= $oct - $space;
                 } else {
@@ -99,6 +98,6 @@ class Convert extends Component
             $lines[] = $value;
         }
 
-        return implode(self::RFC2455_EOL.self::RFC2455_TAB, $lines);
+        return implode(self::RFC2455_EOL . self::RFC2455_TAB, $lines);
     }
 }

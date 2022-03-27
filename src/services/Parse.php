@@ -11,7 +11,6 @@
 namespace nystudio107\icalendar\services;
 
 use craft\base\Component;
-
 use ICal\ICal;
 
 /**
@@ -28,11 +27,11 @@ class Parse extends Component
      * Return the ICal object (or null) for the events feed
      *
      * @param mixed|array|string $files
-     * @param array              $config
+     * @param array $config
      *
-     * @return null|ICal
+     * @return ICal
      */
-    public function ics($files, array $config = [])
+    public function ics(mixed $files, array $config = []): ICal
     {
         return new ICal($files, $config);
     }

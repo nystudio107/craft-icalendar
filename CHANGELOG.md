@@ -1,5 +1,11 @@
 # iCalendar Changelog
 
+## 4.0.0-beta.1 - 2022.03.27
+
+### Added
+
+* Initial Craft CMS 4 compatibility
+
 ## 1.1.2 - 2021.10.10
 ### Fixed
 * Fixed an issue where paragraphs coming from a rich text field would be broken into multiple lines, and then not read by iCal ([#26](https://github.com/nystudio107/craft-icalendar/issues/26))

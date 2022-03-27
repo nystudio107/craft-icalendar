@@ -1,45 +1,39 @@
 {
-    "name": "nystudio107/craft-icalendar",
-    "description": "Tools for parsing & formatting the RFC 2445 iCalendar (.ics) specification",
-    "type": "craft-plugin",
-    "version": "1.1.2",
-    "keywords": [
-        "craft",
-        "cms",
-        "craftcms",
-        "craft-plugin",
-        "icalendar"
-    ],
-    "support": {
-        "docs": "https://nystudio107.com/plugins/icalendar/documentation",
-        "issues": "https://nystudio107.com/plugins/icalendar/support"
-    },
-    "license": "MIT",
-    "authors": [
-        {
-            "name": "nystudio107",
-            "homepage": "https://nystudio107.com"
-        }
-    ],
-    "require": {
-        "craftcms/cms": "^3.0.0",
-        "johngrogg/ics-parser": "^2.1.0"
-    },
-    "autoload": {
-        "psr-4": {
-          "nystudio107\\icalendar\\": "src/"
-        }
-    },
-    "extra": {
-        "name": "iCalendar",
-        "handle": "icalendar",
-        "hasCpSettings": false,
-        "hasCpSection": false,
-        "changelogUrl": "https://raw.githubusercontent.com/nystudio107/craft-icalendar/v1/CHANGELOG.md",
-        "components": {
-            "convert": "nystudio107\\icalendar\\services\\Convert",
-            "parse": "nystudio107\\icalendar\\services\\Parse"
-        },
-        "class": "nystudio107\\icalendar\\ICalendar"
+  "name": "nystudio107/craft-icalendar",
+  "description": "Tools for parsing & formatting the RFC 2445 iCalendar (.ics) specification",
+  "type": "craft-plugin",
+  "version": "4.0.0-beta.1",
+  "keywords": [
+    "craft",
+    "cms",
+    "craftcms",
+    "craft-plugin",
+    "icalendar"
+  ],
+  "support": {
+    "docs": "https://nystudio107.com/docs/icalendar/",
+    "issues": "https://nystudio107.com/plugins/icalendar/support",
+    "source": "https://github.com/nystudio107/craft-icalendar"
+  },
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "nystudio107",
+      "homepage": "https://nystudio107.com"
     }
+  ],
+  "require": {
+    "craftcms/cms": "^4.0.0-beta.1",
+    "johngrogg/ics-parser": "^2.1.0"
+  },
+  "autoload": {
+    "psr-4": {
+      "nystudio107\\icalendar\\": "src/"
+    }
+  },
+  "extra": {
+    "class": "nystudio107\\icalendar\\ICalendar",
+    "handle": "icalendar",
+    "name": "iCalendar"
+  }
 }
