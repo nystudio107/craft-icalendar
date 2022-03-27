@@ -10,15 +10,13 @@
 
 namespace nystudio107\icalendar;
 
+use Craft;
+use craft\base\Plugin;
+use craft\web\twig\variables\CraftVariable;
 use nystudio107\icalendar\services\Convert as ConvertService;
 use nystudio107\icalendar\services\Parse as ParseService;
 use nystudio107\icalendar\twigextensions\ICalendarTwigExtension;
 use nystudio107\icalendar\variables\ICalendarVariable;
-
-use Craft;
-use craft\base\Plugin;
-use craft\web\twig\variables\CraftVariable;
-
 use yii\base\Event;
 
 /**
@@ -29,7 +27,7 @@ use yii\base\Event;
  * @since     1.0.0
  *
  * @property  ConvertService $convert
- * @property  ParseService   $parse
+ * @property  ParseService $parse
  */
 class ICalendar extends Plugin
 {
@@ -37,14 +35,14 @@ class ICalendar extends Plugin
     // =========================================================================
 
     /**
-     * @var ICalendar
+     * @var ?ICalendar
      */
-    public static $plugin;
+    public static ?ICalendar $plugin = null;
 
     /**
-     * @var ICalendarVariable
+     * @var ?ICalendarVariable
      */
-    public static $variable;
+    public static ?ICalendarVariable $variable = null;
 
     // Public Properties
     // =========================================================================
@@ -54,13 +52,36 @@ class ICalendar extends Plugin
      */
     public string $schemaVersion = '1.0.0';
 
+    /**
+     * @var bool
+     */
+    public bool $hasCpSection = false;
+
+    /**
+     * @var bool
+     */
+    public bool $hasCpSettings = false;
+
     // Public Methods
     // =========================================================================
 
     /**
      * @inheritdoc
      */
-    public function init()
+    public function __construct($id, $parent = null, array $config = [])
+    {
+        $config['components'] = [
+            'convert' => ConvertService::class,
+            'parse' => ParseService::class,
+        ];
+
+        parent::__construct($id, $parent, $config);
+    }
+
+    /**
+     * @inheritdoc
+     */
+    public function init(): void
     {
         parent::init();
         self::$plugin = $this;
@@ -71,7 +92,7 @@ class ICalendar extends Plugin
         Event::on(
             CraftVariable::class,
             CraftVariable::EVENT_INIT,
-            function (Event $event) {
+            static function (Event $event) {
                 /** @var CraftVariable $variable */
                 $variable = $event->sender;
                 $variable->set('icalendar', self::$variable);

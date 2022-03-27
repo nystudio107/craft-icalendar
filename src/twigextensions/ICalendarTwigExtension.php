@@ -11,7 +11,6 @@
 namespace nystudio107\icalendar\twigextensions;
 
 use nystudio107\icalendar\ICalendar;
-
 use Twig\Extension\AbstractExtension as TwigExtension;
 use Twig\TwigFilter;
 use Twig\TwigFunction;
@@ -29,7 +28,7 @@ class ICalendarTwigExtension extends TwigExtension
     /**
      * @inheritdoc
      */
-    public function getName()
+    public function getName(): string
     {
         return 'ICalendar';
     }
@@ -37,7 +36,7 @@ class ICalendarTwigExtension extends TwigExtension
     /**
      * @inheritdoc
      */
-    public function getFilters()
+    public function getFilters(): array
     {
         return [
             new TwigFilter('rfc2445', [ICalendar::$variable, 'rfc2445']),
@@ -48,7 +47,7 @@ class ICalendarTwigExtension extends TwigExtension
     /**
      * @inheritdoc
      */
-    public function getFunctions()
+    public function getFunctions(): array
     {
         return [
             new TwigFunction('rfc2445', [ICalendar::$variable, 'rfc2445']),
