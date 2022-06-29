@@ -1,5 +1,12 @@
 # iCalendar Changelog
 
+## 4.0.0 - 2022.06.29
+### Added
+* Initial Craft CMS 4 release
+
+### Changed
+* Bump `johngrogg/ics-parser` to `^3.0.0` ([#32](https://github.com/nystudio107/craft-icalendar/issues/32))
+
 ## 4.0.0-beta.1 - 2022.03.27
 
 ### Added
