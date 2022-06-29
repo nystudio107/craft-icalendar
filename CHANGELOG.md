@@ -1,5 +1,9 @@
 # iCalendar Changelog
 
+## 1.1.3 - 2022.06.29
+### Changed
+* Bump `johngrogg/ics-parser` to `^3.0.0` ([#32](https://github.com/nystudio107/craft-icalendar/issues/32))
+
 ## 1.1.2 - 2021.10.10
 ### Fixed
 * Fixed an issue where paragraphs coming from a rich text field would be broken into multiple lines, and then not read by iCal ([#26](https://github.com/nystudio107/craft-icalendar/issues/26))
