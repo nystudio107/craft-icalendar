@@ -1,5 +1,9 @@
 # iCalendar Changelog
 
+## 1.1.4 - UNRELEASED
+### Changed
+* Fixed an issue with multi-byte encoded content that would cause PHP to run out of memory ([#34](https://github.com/nystudio107/craft-icalendar/issues/34))
+
 ## 1.1.3 - 2022.06.29
 ### Changed
 * Bump `johngrogg/ics-parser` to `^3.0.0` ([#32](https://github.com/nystudio107/craft-icalendar/issues/32))
