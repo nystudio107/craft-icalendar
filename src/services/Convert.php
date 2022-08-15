@@ -11,7 +11,6 @@
 namespace nystudio107\icalendar\services;
 
 use craft\base\Component;
-use function strlen;
 
 /**
  * @author    nystudio107
@@ -76,14 +75,14 @@ class Convert extends Component
         $value = html_entity_decode($value);
         $value = preg_replace('/\n+/', ' ', $value);
         $value = preg_replace('/\s{2,}/', ' ', $value);
-        $preamble_len = strlen($preamble);
+        $preamble_len = mb_strlen($preamble);
         $lines = [];
-        while (strlen($value) > (self::MAX_OCTETS - $preamble_len)) {
+        while (mb_strlen($value) > (self::MAX_OCTETS - $preamble_len)) {
             $space = (self::MAX_OCTETS - $preamble_len);
             $mbcc = $space;
             while ($mbcc) {
                 $line = mb_substr($value, 0, $mbcc);
-                $oct = strlen($line);
+                $oct = mb_strlen($line);
                 if ($oct > $space) {
                     $mbcc -= $oct - $space;
                 } else {
