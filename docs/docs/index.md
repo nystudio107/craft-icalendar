@@ -1,10 +1,10 @@
 ---
-title: iCalendar plugin for Craft CMS 3.x
+title: iCalendar plugin for Craft CMS
 description: Documentation for the iCalendar plugin. iCalendar provides tools for parsing & formatting the RFC 2445 iCalendar (.ics) specification
 ---
 [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/nystudio107/craft-icalendar/badges/quality-score.png?b=v1)](https://scrutinizer-ci.com/g/nystudio107/craft-icalendar/?branch=v1) [![Code Coverage](https://scrutinizer-ci.com/g/nystudio107/craft-icalendar/badges/coverage.png?b=v1)](https://scrutinizer-ci.com/g/nystudio107/craft-icalendar/?branch=v1) [![Build Status](https://scrutinizer-ci.com/g/nystudio107/craft-icalendar/badges/build.png?b=v1)](https://scrutinizer-ci.com/g/nystudio107/craft-icalendar/build-status/v1) [![Code Intelligence Status](https://scrutinizer-ci.com/g/nystudio107/craft-icalendar/badges/code-intelligence.svg?b=v1)](https://scrutinizer-ci.com/code-intelligence)
 
-# iCalendar plugin for Craft CMS 3.x
+# iCalendar plugin for Craft CMS
 
 Provides tools for parsing & formatting the RFC 2445 iCalendar (.ics) specification
 
@@ -12,7 +12,7 @@ Provides tools for parsing & formatting the RFC 2445 iCalendar (.ics) specificat
 
 ## Requirements
 
-This plugin requires Craft CMS 3.0.0 or later.
+This plugin requires Craft CMS 3.0.0 or later or Craft CMS 4.0.0 or later.
 
 ## Installation
 
@@ -133,7 +133,7 @@ To use iCalendar, just wrap your Twig code that outputs your iCalendar RFC 2445 
 {% spaceless %}
 {% header "Content-Type: text/calendar; charset=utf-8" %}
 {% header "Content-Disposition: attachment; filename=cal.ics" %}
-{% filter rfc2445 %}
+{% apply rfc2445 %}
 BEGIN:VCALENDAR
 PRODID:{{ entry.title }}
 CALSCALE:GREGORIAN
@@ -156,6 +156,8 @@ END:VCALENDAR
 {% endfilter %}
 {% endspaceless %}
 ```
+
+**N.B.:** For the above code, if you're running a version of Twig older than 2.9, you'll need to use `{% filter rfc2445 %}` instead.
 
 This will output:
 ```
