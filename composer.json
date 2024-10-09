@@ -2,7 +2,7 @@
   "name": "nystudio107/craft-icalendar",
   "description": "Tools for parsing & formatting the RFC 2445 iCalendar (.ics) specification",
   "type": "craft-plugin",
-  "version": "4.0.2",
+  "version": "5.0.0",
   "keywords": [
     "craft",
     "cms",
@@ -23,7 +23,7 @@
     }
   ],
   "require": {
-    "craftcms/cms": "^4.0.0",
+    "craftcms/cms": "^5.0.0",
     "johngrogg/ics-parser": "^3.0.0"
   },
   "require-dev": {
