@@ -1,6 +1,6 @@
 # iCalendar Changelog
 
-## 1.1.5 - UNRELEASED
+## 1.1.5 - 2024.10.09
 ### Added
 * Add `phpstan` and `ecs` code linting
 * Add `code-analysis.yaml` GitHub action
