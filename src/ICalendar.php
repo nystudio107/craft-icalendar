@@ -10,14 +10,14 @@
 
 namespace nystudio107\icalendar;
 
-use nystudio107\icalendar\services\Convert as ConvertService;
-use nystudio107\icalendar\services\Parse as ParseService;
-use nystudio107\icalendar\twigextensions\ICalendarTwigExtension;
-use nystudio107\icalendar\variables\ICalendarVariable;
-
 use Craft;
 use craft\base\Plugin;
 use craft\web\twig\variables\CraftVariable;
+use nystudio107\icalendar\services\Convert as ConvertService;
+
+use nystudio107\icalendar\services\Parse as ParseService;
+use nystudio107\icalendar\twigextensions\ICalendarTwigExtension;
+use nystudio107\icalendar\variables\ICalendarVariable;
 
 use yii\base\Event;
 
@@ -71,7 +71,7 @@ class ICalendar extends Plugin
         Event::on(
             CraftVariable::class,
             CraftVariable::EVENT_INIT,
-            function (Event $event) {
+            function(Event $event) {
                 /** @var CraftVariable $variable */
                 $variable = $event->sender;
                 $variable->set('icalendar', self::$variable);

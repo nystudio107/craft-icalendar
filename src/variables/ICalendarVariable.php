@@ -10,11 +10,11 @@
 
 namespace nystudio107\icalendar\variables;
 
-use nystudio107\icalendar\ICalendar;
-
 use craft\helpers\Template;
 
 use ICal\ICal;
+
+use nystudio107\icalendar\ICalendar;
 
 use Twig\Markup;
 
