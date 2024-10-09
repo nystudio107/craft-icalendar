@@ -4,7 +4,7 @@ description: Documentation for the iCalendar plugin. iCalendar provides tools fo
 ---
 [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/nystudio107/craft-icalendar/badges/quality-score.png?b=v4)](https://scrutinizer-ci.com/g/nystudio107/craft-icalendar/?branch=v4) [![Code Coverage](https://scrutinizer-ci.com/g/nystudio107/craft-icalendar/badges/coverage.png?b=v4)](https://scrutinizer-ci.com/g/nystudio107/craft-icalendar/?branch=v4) [![Build Status](https://scrutinizer-ci.com/g/nystudio107/craft-icalendar/badges/build.png?b=v4)](https://scrutinizer-ci.com/g/nystudio107/craft-icalendar/build-status/v4) [![Code Intelligence Status](https://scrutinizer-ci.com/g/nystudio107/craft-icalendar/badges/code-intelligence.svg?b=v4)](https://scrutinizer-ci.com/code-intelligence)
 
-# iCalendar plugin for Craft CMS
+# iCalendar plugin for Craft CMS 4.x
 
 Provides tools for parsing & formatting the RFC 2445 iCalendar (.ics) specification
 
