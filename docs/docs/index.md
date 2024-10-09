@@ -12,7 +12,7 @@ Provides tools for parsing & formatting the RFC 2445 iCalendar (.ics) specificat
 
 ## Requirements
 
-This plugin requires Craft CMS 3.0.0 or later or Craft CMS 4.0.0 or later.
+This plugin requires Craft CMS 3.0.0 or later
 
 ## Installation
 
@@ -157,7 +157,7 @@ END:VCALENDAR
 {% endspaceless %}
 ```
 
-**N.B.:** For the above code, if you're running a version of Twig older than 2.9, you'll need to use `{% filter rfc2445 %}` instead.
+**N.B.:** For the above code, if you’re running a version of Twig older than 2.9, you’ll need to use `{% filter rfc2445 %}` instead.
 
 This will output:
 ```
