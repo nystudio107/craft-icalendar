@@ -11,11 +11,8 @@
 namespace nystudio107\icalendar\variables;
 
 use craft\helpers\Template;
-
 use ICal\ICal;
-
 use nystudio107\icalendar\ICalendar;
-
 use Twig\Markup;
 
 /**
@@ -34,7 +31,7 @@ class ICalendarVariable
      *
      * @param string $text
      *
-     * @return string
+     * @return Markup
      */
     public function rfc2445(string $text): Markup
     {
@@ -45,7 +42,7 @@ class ICalendarVariable
      * Return the ICal object (or null) for the events feed
      *
      * @param mixed|array|string $files
-     * @param array              $config
+     * @param array $config
      *
      * @return null|ICal
      */
